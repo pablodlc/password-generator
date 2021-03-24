@@ -58,5 +58,21 @@ function writePassword() {
 document.getElementById("generate").addEventListener("click", writePassword);
 
 function writePassword() {
-  alert("Yo!");
+}
+
+function btnGen() {
+  // User chooses the length of the password
+  let userLength = prompt("How many characters are to be included in the password?\n8 minimum characters, 128 maximum.", "8");
+
+  // User chooses on the inclusion of lowercase letters
+  let confirmLower = confirm("Would you like to include lowercase letters in your password?");
+
+  // User chooses on the inclusion of uppercase letters
+  let confirmUpper = confirm("Would you like to include uppercase letters in your password?");
+
+  // User chooses on the inclusion of numbers
+  let confirmMunbers = confirm("Would you like to include numbers in your password?");
+  
+  // User chooses on the inclusion of special characters
+  let confirmSpecial = confirm("Would you like to include special characters in your password?");
 }
