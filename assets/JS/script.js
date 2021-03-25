@@ -84,5 +84,10 @@ function btnGen() {
       if (confirmSpecial) {
         console.log("User wants special characters included");
       }
+
+      if (confirmLower, confirmUpper, confirmNumbers, confirmSpecial == false) {
+        alert("So, you want a password with no characters?\nTry again");
+        btnGen();
+      }
      }
 }
