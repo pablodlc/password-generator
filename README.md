@@ -28,3 +28,4 @@ A JavaScript powered password generator, capable of making passwords from 8 to 1
 ## Resources
 - *Robot Gladiators*
 - prework assignment, *Watch That Box* for `onclick` event listener in index.html
+- [W3Schools](https://www.w3schools.com/js/tryit.asp?filename=tryjs_validation_number) to verify user input is a number and that number has a value of 8 through 128.

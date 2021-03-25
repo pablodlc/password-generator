@@ -60,17 +60,29 @@ function btnGen() {
     }
     else {
       
+      console.log("User wants their password to have " + userLength + " characters");
       // User chooses on the inclusion of lowercase letters
       let confirmLower = window.confirm("Got it, " + userLength + " characters.\nWould you like us to sprinkle some lowercase letters in your password?");
+      if (confirmLower) {
+        console.log("User wants lowercase letters included");
+      }
     
     // User chooses on the inclusion of uppercase letters
       let confirmUpper = window.confirm("Wanna spice it up with some uppercase letters?");
+      if (confirmUpper) {
+        console.log("User wants uppercase letters included");
+      }
 
     // User chooses on the inclusion of numbers
-      let confimNumbers = window.confirm("How about numbers? Hackers hate it when you use numbers.");
+      let confirmNumbers = window.confirm("How about numbers? Hackers hate it when you use numbers.");
+      if (confirmNumbers) {
+        console.log("User wants numbers included");
+      }
  
     // User chooses on the inclusion of special characters
       let confirmSpecial = window.confirm("Know what's harder to guess? Special characters! Want some?");
-    
+      if (confirmSpecial) {
+        console.log("User wants special characters included");
+      }
      }
 }
