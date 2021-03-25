@@ -61,35 +61,16 @@ function btnGen() {
     else {
       
       // User chooses on the inclusion of lowercase letters
-      let confirmLower = confirm("Got it, " + userLength + " characters.\nWould you like to include lowercase letters in your password?");
-    }
-      
+      let confirmLower = window.confirm("Got it, " + userLength + " characters.\nWould you like us to sprinkle some lowercase letters in your password?");
+    
     // User chooses on the inclusion of uppercase letters
-    if (confirmLower) {
-      let confirmUpper = confirm("M'kay, we'll sprinkle in a few lowercase letters.\nDo you like some letters taller than the others?");
-    }
-    
-    if (confirmLower != true) {
-      let confirmUpper = confirm("No shorties.\nDo you want your password to shout?");
-    }
+      let confirmUpper = window.confirm("Wanna spice it up with some uppercase letters?");
 
-      if(confirmUpper) {
-      console.log("confirmUpper");
-      }
-    //   // User chooses on the inclusion of numbers
-    //   if (confirmUpper) {
-    //     let confimNumbers = confirm("Alright, we can manage a few big letters.\nHow about numbers? Hackers hate it when you use numbers.");
-    //   }
-    //   else {
-    //     let confirmNumbers = confirm("Too bulky? You're right, not our business.  No caps.\nThe cool kids like numbers. Do you like numbers?");
-    //   }
+    // User chooses on the inclusion of numbers
+      let confimNumbers = window.confirm("How about numbers? Hackers hate it when you use numbers.");
+ 
+    // User chooses on the inclusion of special characters
+      let confirmSpecial = window.confirm("Know what's harder to guess? Special characters! Want some?");
     
-    //   // User chooses on the inclusion of special characters
-    //   if (confirmNumbers) {
-    //     let confirmSpecial = confirm("Alright, Einstein, we can throw some numbers in there.\nWhat are your thoughts on semicolons? Want special characters?");
-    //   }
-    //   else {
-    //     let confirmSpecial = confirm("No numbers? You may as well just use \"\password\"\\nCan we please put in a special character or two for ya?");
-    //   }
      }
-    
+}
