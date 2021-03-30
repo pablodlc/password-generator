@@ -1,7 +1,7 @@
 // This matches var `display` to #password in textarea in the HTML code, which will display the generated password on the page
 var display = document.querySelector("#password");
 
-// The following variables are declared and given empty arrays to work with
+// The following varaibles contain arrays of their namesake characters
 var lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
 var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
