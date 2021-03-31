@@ -12,17 +12,17 @@ var special = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "+", "=", 
 
 var passwordLength = "";
 var userCharSet = "";
-// var password = "";
 
 
-// Write password to the #password input
+// function to get length of password
 function getLength() {
 
     let userLength = prompt("How many characters are to be included in the password?\n8 minimum characters, 128 maximum.", "8");
 
+    // If the silly user inputs an empty value, or if the value wasn't a number between 8 and 128, they have to start again.
     if (isNaN(userLength) || userLength < 8 || userLength > 128) {
     alert("Not too good with directions, are ya, Bucko?\nLet's try again, this time use a number between 8 and 128");
-    writePassword();
+    location.reload();
     }
 
     else {
@@ -30,14 +30,15 @@ function getLength() {
         writePassword(lowercase, uppercase, numbers, special);
     }
     passwordLength = userLength;
+    return passwordLength;
 }        
 
 
 function writePassword(lowercase, uppercase, numbers, special) {
 
     // User chooses on the inclusion of lowercase letters      
-    let confirmLower = window.confirm("Got it, " + passwordLength + " characters.\nWould you like us to sprinkle some lowercase letters in your password?");
-    console.log(confirmLower);
+    let confirmLower = window.confirm("Got it. Would you like us to sprinkle some lowercase letters in your password?");
+
     // User chooses on the inclusion of uppercase letters
     let confirmUpper = window.confirm("Wanna spice it up with some uppercase letters?");
     
@@ -51,22 +52,21 @@ function writePassword(lowercase, uppercase, numbers, special) {
     // If our silly user chooses a password with no characters, they get a snarky reply and have to start over
         // EDITORIAL: I know the following line isn't DRY, but I couldn't figure out how to include all of the confirms once and set all of them to != true at once.  When I comma separated them, if I clicked to INCLUDE lowercase letters and EXCLUDE the rest, it gave me the snarky alert message
     if ((confirmLower != true) && (confirmUpper != true) && (confirmNumbers != true) && (confirmSpecial != true)) {
-        alert("So you want a password with no characters?\nTry again");
-        getLength();
+        // alert("So you want a password with no characters?\nTry again");
+        alert("So you want a password with no characters?\nLet's try again.");
+        location.reload();
     }
 
     else {
     
         if (confirmLower) {
-            console.log("lowercase")
-            console.log(lowercase.length);
             for (var i = 0; i < lowercase.length; i++) {
                 userCharSet = userCharSet +  lowercase[i];
             }
             console.log("User wants lowercase letters included");
         };
     
-        if (confirmUpper); {
+        if (confirmUpper) {
         for (var i = 0; i < uppercase.length; i++) {
                 userCharSet = userCharSet + uppercase[i];
             }
@@ -92,14 +92,10 @@ function writePassword(lowercase, uppercase, numbers, special) {
 }
 
 function generator(passwordLength) {
-   
-    console.log("generator running...");
-    console.log("usercharset")
-    console.log(userCharSet);
-    console.log("userlength")
-    console.log(passwordLength);
+
     var password = [];
     for (var i = 0; i < passwordLength; i++) {
+        console.log(userCharSet);
         var randomIndex = Math.floor(Math.random() * userCharSet.length);
         password.push(userCharSet[randomIndex]);
     }
@@ -108,14 +104,11 @@ function generator(passwordLength) {
 
 
 function generatePassword() {
-    // var getUserInput = getLength();
-    //var password =getLength(); 
+    
     getLength();
     var password = generator(passwordLength);
-    console.log("password")
-    console.log(password)
     displayPassword(password);
-    console.log(password.length);
+    alert("Your password is:\n" + password);
 }
 
 function displayPassword(password) {
