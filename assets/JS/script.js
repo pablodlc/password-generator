@@ -16,7 +16,6 @@ var userCharSet = "";
 
 // function to get length of password
 function getLength() {
-
     let userLength = prompt("How many characters are to be included in the password?\n8 minimum characters, 128 maximum.", "8");
 
     // If the silly user inputs an empty value, or if the value wasn't a number between 8 and 128, they have to start again.
@@ -35,7 +34,6 @@ function getLength() {
 
 
 function writePassword(lowercase, uppercase, numbers, special) {
-
     // User chooses on the inclusion of lowercase letters      
     let confirmLower = window.confirm("Got it. Would you like us to sprinkle some lowercase letters in your password?");
 
@@ -55,10 +53,8 @@ function writePassword(lowercase, uppercase, numbers, special) {
         // alert("So you want a password with no characters?\nTry again");
         alert("So you want a password with no characters?\nLet's try again.");
         location.reload();
-    }
-
-    else {
-    
+    } else {
+        // Here the browser records the user's choices and adds the approppriate character sets to `userCharSet`
         if (confirmLower) {
             for (var i = 0; i < lowercase.length; i++) {
                 userCharSet = userCharSet +  lowercase[i];
@@ -86,34 +82,49 @@ function writePassword(lowercase, uppercase, numbers, special) {
             }
             console.log("User wants special characters included");
         }
+        // Here we tell the browser to run generator()
         generator();
     }
     return userCharSet;
 }
 
 function generator(passwordLength) {
-
+    // Declaring `passowrd` variable with an empty array to hold the generated password
     var password = [];
+    // Here the script repeats the for loop as many times as the amount of characters chosen by the user (passwordLength), while accessing the userCharSet and randomly choosing characters for the password
     for (var i = 0; i < passwordLength; i++) {
-        console.log(userCharSet);
+        console.log("The user's character set array contains: " + userCharSet);
         var randomIndex = Math.floor(Math.random() * userCharSet.length);
         password.push(userCharSet[randomIndex]);
     }
+    // .join("") returns an array as a string. The `""` joins the string together 
     return password.join("");
 }
 
-
+// Generator starts here when button is clicked
 function generatePassword() {
     
     getLength();
     var password = generator(passwordLength);
     displayPassword(password);
-    alert("Your password is:\n" + password);
 }
 
 function displayPassword(password) {
     display.textContent = password;
+    if (password === "") {
+        location.reload();
+    } else {
+    alert("Your password is:\n" + password);
+    }
 }
 
 // Adding an EventListener to listen for the "click" when a user clicks the #generate button
 document.getElementById("generate").addEventListener("click", generatePassword);
+
+var slider = document.getElementById("myRange");
+var output = document.getElementById("demo");
+output.innerHTML = slider.value;
+
+slider.oninput = function() {
+  output.innerHTML = this.value;
+}
