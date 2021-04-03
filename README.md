@@ -24,6 +24,9 @@ A JavaScript powered password generator, capable of making passwords from 8 to 1
 > THEN a password is generated that matches the selected criteria  
 > WHEN the password is generated  
 > THEN the password is either displayed in an alert or written to the page  
+
+## Technologies
+!["HTML5 logo"](./assets/images/HTML.png) !["CSS logo"](./assets/images/css.png) !["Javascript logo"](./assets/images/js.png)
   
 ## Application
 Please visit my deployed application by clicking [zg&&e8EeM!](https://pablodlc.github.io/password-generator/).  
