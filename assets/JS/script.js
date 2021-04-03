@@ -35,7 +35,7 @@ function getLength() {
 
 function writePassword(lowercase, uppercase, numbers, special) {
     // User chooses on the inclusion of lowercase letters      
-    let confirmLower = window.confirm("Got it. Would you like us to sprinkle some lowercase letters in your password?");
+    let confirmLower = window.confirm("Would you like us to sprinkle some lowercase letters in your password?");
 
     // User chooses on the inclusion of uppercase letters
     let confirmUpper = window.confirm("Wanna spice it up with some uppercase letters?");
@@ -54,7 +54,7 @@ function writePassword(lowercase, uppercase, numbers, special) {
         alert("So you want a password with no characters?\nLet's try again.");
         location.reload();
     } else {
-        // Here the browser records the user's choices and adds the approppriate character sets to `userCharSet`
+        // Here the script records the user's choices and adds the approppriate character sets to `userCharSet`
         if (confirmLower) {
             for (var i = 0; i < lowercase.length; i++) {
                 userCharSet = userCharSet +  lowercase[i];
@@ -109,6 +109,7 @@ function generatePassword() {
     displayPassword(password);
 }
 
+// Function to print the password to the page using `displat.textContent` and on an alert
 function displayPassword(password) {
     display.textContent = password;
     if (password === "") {
