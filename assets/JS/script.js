@@ -121,11 +121,3 @@ function displayPassword(password) {
 
 // Adding an EventListener to listen for the "click" when a user clicks the #generate button
 document.getElementById("generate").addEventListener("click", generatePassword);
-
-var slider = document.getElementById("myRange");
-var output = document.getElementById("demo");
-output.innerHTML = slider.value;
-
-slider.oninput = function() {
-  output.innerHTML = this.value;
-}
